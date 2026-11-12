@@ -1,0 +1,28 @@
+{
+  "status": "fundamentada_no_oficial",
+  "clp_index": "CLICP Index|PX_LAST",
+  "usd_rate": "FEDL01 Index|PX_LAST",
+  "clp_factor": "index_end/index_start - 1",
+  "missing_clp_endpoints": "explicit opt-in bounded log-linear interpolation; max native bracket seven calendar days; no extrapolation; ex-post only",
+  "usd_units": "annual_percent_divided_by_100",
+  "usd_basis": "ACT/360",
+  "usd_accrual": "product daily with last economic dated rate; max age seven calendar days",
+  "capital_convention": "CLP total capital compounded; unit target exposure proportional to capital; symmetric funding",
+  "costs_bps_per_target_turnover_unit": [
+    0,
+    1,
+    5
+  ],
+  "terminal_liquidation": true,
+  "bootstrap_block": 10,
+  "bootstrap_reps": 1999,
+  "bootstrap_seed": 20261112,
+  "official_evaluator_reproduced": false,
+  "predictive_inputs_changed": false,
+  "accounting_sensitivity": [
+    "log_linear",
+    "previous_native",
+    "next_native"
+  ],
+  "sensitivity_changes_predictive_strategy": false
+}

@@ -1,0 +1,73 @@
+{
+  "source_sha256": "a198a2357332685b784fddd852dea242f59e90046dedd9709a3429ae9f6134ee",
+  "extracted_from": {
+    "data/versiones/oficial_a198a2357332/src/pipeline_datos.py": {
+      "sha256": "e4ce93bb008884c5c37c38ed18731d0722bec142a34ba9563cb2dd8982817523",
+      "symbols": [
+        "FeatureSpec",
+        "CORE",
+        "Config",
+        "finite_number",
+        "value_valid",
+        "observed_calendar",
+        "build_targets"
+      ]
+    },
+    "data/versiones/oficial_a198a2357332/src/fase_recuperacion_calendarios.py": {
+      "sha256": "99ba791d713043d2c8238574eb24beb45a5b323d3104b55207c10348c4073024",
+      "symbols": [
+        "NYSE",
+        "LME",
+        "BRAZIL_2024",
+        "POLICY",
+        "in_dates",
+        "closed"
+      ]
+    },
+    "data/versiones/oficial_a198a2357332/src/fase_validacion_tratamientos.py": {
+      "sha256": "81b19ef6b840a723031da6c647d072d8ef437e5a854fbfd58cdea233ef08f47f",
+      "symbols": [
+        "candidate_closed"
+      ]
+    },
+    "data/versiones/oficial_a198a2357332/src/fase_imputacion_flexible.py": {
+      "sha256": "5590418383ea318d06135025b828aa45228aeaf226815144b088abb192698dda",
+      "symbols": [
+        "OfficialSeries",
+        "LOG",
+        "change",
+        "documented_closed",
+        "last_authentic",
+        "calendar_value"
+      ]
+    },
+    "research/fase2/phase2.py": {
+      "sha256": "4848bb6b4524c1096de04ce6f70892c927ef5ea182795516c081218077c96b2b",
+      "symbols": [
+        "previous_weekday",
+        "feature_cutoff"
+      ]
+    },
+    "research/fase3/phase3.py": {
+      "sha256": "ccab6ec5983e63e8509417c6885a5d136d997bba6f3fc7bfd06b19fd74182f1d",
+      "symbols": [
+        "histories",
+        "rsi",
+        "ema",
+        "feature_row"
+      ]
+    },
+    "research/fase5d_a/audit_history.py": {
+      "sha256": "39708ceb8a18c351d48790adef02af50f71f1a26e1da619d438d8cb81819547e",
+      "symbols": [
+        "native",
+        "base_row"
+      ]
+    }
+  },
+  "numerical_equivalence_required": "3638 modern rows x97; exact equal_nan; verified separately",
+  "adaptations": [
+    "standalone namespace bindings only",
+    "no model or calendar-rule changes"
+  ]
+}

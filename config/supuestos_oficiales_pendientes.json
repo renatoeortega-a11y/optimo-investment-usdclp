@@ -1,0 +1,15 @@
+{
+  "status": "compatibilidad_operativa_por_confirmar",
+  "execution_price": "USDCLP Curncy|PX_LAST; referencia de simulacion al cierre",
+  "decision_time_and_timezone": null,
+  "execution_time_and_timezone": null,
+  "carry_rate_clp_field": "CLICP Index|PX_LAST; indice",
+  "carry_rate_usd_field": "FEDL01 Index|PX_LAST; porcentaje anual",
+  "rate_publication_lags": null,
+  "day_count": "ACT/360 USD; variacion indice CLP",
+  "cash_base_return": null,
+  "cost_per_turnover_unit_bps": null,
+  "monitor_calendar": null,
+  "daily_feed_schema_confirmed": false,
+  "reserved_period_authorized": "preparacion fija hasta2026-11-06; inferencia2026 separada; no nueva evaluacion"
+}

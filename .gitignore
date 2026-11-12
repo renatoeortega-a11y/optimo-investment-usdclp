@@ -1,0 +1,23 @@
+.venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+data/raw/
+outputs/
+*.xlsx
+*.xls
+*.parquet
+*.joblib
+*.pkl
+*.env
+.env*
+*PRIVADA*
+*PRIVADO*
+
+# Runtime assets are private and never published
+artifacts/
+runtime/
+logs/
+results/
+review/
+*.npz

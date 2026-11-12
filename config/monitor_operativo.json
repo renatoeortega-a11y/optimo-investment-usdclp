@@ -1,0 +1,13 @@
+{
+  "reference_commit": "1b94c98ec50a14e6d5e89ffa5a3ff2102825daec",
+  "scope": "inference_only_2026",
+  "clock_timezone": "America/Santiago",
+  "frozen_model_sha256": "5f2394a58a1c85bff494fd7e8cb3f58887b6d57f404db92aa9d30ba08a77a052",
+  "feature_order_sha256": "2bc4aa6733149c03ed10b891055a09b1a5a19eabe69525f8186bbcd9c6624904",
+  "features": 97,
+  "depth": 6,
+  "temperature": 1.0,
+  "last_train_known": "2026-11-06",
+  "supported_year": 2026,
+  "training_cutoff": "2026-11-06"
+}

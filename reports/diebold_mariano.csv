@@ -1,0 +1,2 @@
+id,reference,metric,n,lag,horizon,delta,statistic,p,method
+ExtraTrees,Laplace_dynamic,triclase_logloss,1524,10,1,-0.001592337874435742,-1.0092790422152202,0.3130011467760814,DM HAC Bartlett; HLN h1; t n-1; exploratory

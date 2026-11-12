@@ -1,0 +1,9 @@
+{
+  "cutoff": "2026-11-06",
+  "origin": "2010-01-01",
+  "depth": 6,
+  "temperature": 1.0,
+  "seed": 20261109,
+  "selection": "none; parameters frozen before authorized deployment fit",
+  "scope": "one-time preparation; no evaluation of 2026"
+}
