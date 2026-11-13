@@ -24,13 +24,15 @@ def approval(manifest):
  if not registry.exists():return None
  entries=read(registry)['approvals']
  return next((e for e in entries if e.get('payload_sha256')==payload and e.get('scope')=='inference_only_2026' and e.get('source_id')==manifest.get('source_id') and e.get('schema_sha256')==manifest.get('schema_sha256')),None)
-def load_fields(path,cutoff,fields,manifest,role='live_predictors'):
+def load_fields(path,cutoff,fields,manifest,role='live_predictors',access_mode='strict'):
  if role!='live_predictors':raise ValueError('Ruta de integración: sólo predictores, sin acceso a etiquetas/evaluación/financiación')
  validate_manifest(manifest)
+ if access_mode not in ('strict','user_provided'):raise ValueError('Modo de lectura desconocido')
+ if access_mode=='user_provided' and (manifest['synthetic'] or manifest['daily_feed_certified']):raise ValueError('Un archivo local no puede autodeclarar certificación ni usar el modo sintético')
  if cutoff>common.operational_today():raise ValueError('Corte posterior al reloj operativo de Chile')
  if fields-PREDICTORS:raise ValueError('La ruta predictiva no lee financiación ni resultados')
  if sha(path)!=manifest['snapshot_sha256']:raise ValueError('Snapshot no coincide con manifiesto autorizado')
- if not manifest.get('synthetic'):
+ if not manifest.get('synthetic') and access_mode=='strict':
   if approval(manifest) is None:raise ValueError('Manifiesto no aprobado por canal de control')
  rows={};last=None;last_date=None
  with zipfile.ZipFile(path) as z:

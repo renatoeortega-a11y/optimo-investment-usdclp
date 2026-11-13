@@ -60,15 +60,32 @@ Get-FileHash artifacts/deployment_final.joblib -Algorithm SHA256
 
 Hash esperado: `5f2394a58a1c85bff494fd7e8cb3f58887b6d57f404db92aa9d30ba08a77a052`. El corte es fijo; el comando rechaza otros cortes y sobrescrituras. Conservar privadamente el artefacto y su manifiesto. Si el hash difiere, detener la activación y revisar el entorno.
 
-## Inferencia diaria: sin entrenamiento
+## Cómo generar una nueva predicción
 
-El laboratorio proporciona el snapshot actualizado, su manifiesto y la aprobación externa de procedencia y disponibilidad. [Contrato de datos](docs/contrato_datos.md) · [Operación](docs/operacion.md).
+Después de preparar el modelo **una sola vez**, el uso diario tiene tres pasos:
+
+1. **Actualizar el Excel**, conservando la hoja `datos`, los campos y la historia del [contrato](docs/contrato_datos.md).
+2. **Ejecutar un comando** con fecha de decisión y posición real anterior:
 
 ```powershell
-.\.venv\Scripts\python.exe -B -m monitor_lab live-signal --snapshot runtime/snapshots/mercado.xlsx --manifest runtime/manifiestos/mercado.json --model artifacts/deployment_final.joblib --decision 2026-11-12 --previous-position 0 --session-confirmed --output outputs/live_signal_PRIVADA.json
+.\.venv\Scripts\python.exe -m monitor_lab predict --excel data/mercado_actualizado.xlsx --decision 2026-11-12 --previous-position 1
 ```
 
-Actualizar fecha, posición real previa, snapshot y aprobación cada jornada. La salida contiene probabilidades, posición y rebalanceo propuesto. Ausencias admitidas siguen el codificador congelado; columnas estructurales ausentes o contratos inválidos producen rechazo. Sin sesión confirmada o con snapshot desactualizado, `NO_ORDER` conserva la exposición.
+3. **Leer la señal**: probabilidades, posición objetivo y rebalanceo propuesto. El JSON se guarda automáticamente en `outputs/predict/`. `--csv` añade un CSV y `--json` muestra sólo JSON en consola.
+
+Ejemplo **sintético, no resultado real**:
+
+```text
+USD/CLP | Decisión: 2026-11-12 | Información utilizada hasta: 2026-11-11
+Procedencia: archivo del usuario; NO certificado externamente
+Probabilidad de baja: 48.00% | Estabilidad: 1.00% | Alza: 51.00%
+Posición anterior: 1 | Objetivo: 1 | Rebalanceo: 0 | Acción: HOLD
+Propuesta, NO orden real.
+```
+
+No hay que escribir manifiestos ni calcular hashes: se validan y registran automáticamente. No ejecutar `fit-deployment` cada día. Fecha y posición son explícitas porque la interfaz no conoce la cartera real ni certifica una sesión por mirar un calendario. El modo local es una simulación no certificada de la jornada solicitada; fines de semana, datos desactualizados o `--session-unconfirmed` producen NO_ORDER y conservan la exposición anterior.
+
+Para un canal certificado, el laboratorio configura una vez la confianza y el proveedor entrega firmas automáticas de las actualizaciones. No se transforma un archivo local en certificado por marcar una casilla. La ruta estricta `live-signal` permanece disponible. [Modos local/certificado y controles avanzados](docs/prediccion_diaria.md).
 
 ## Backtest, notebook y pruebas
 

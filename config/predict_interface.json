@@ -1,0 +1,5 @@
+{
+  "model_path": "artifacts/deployment_final.joblib",
+  "output_directory": "outputs/predict",
+  "minimum_usdclp_observations": 21
+}
