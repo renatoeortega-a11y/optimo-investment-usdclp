@@ -40,7 +40,7 @@ CLICP se utiliza como índice de devengo; FEDL01 como porcentaje anual ACT/360. 
 
 ## Instalación y datos
 
-Se requiere acceso al repositorio privado y al Excel oficial por canal autorizado. Referencia comprobada: Windows, Python 3.12.10. No se redistribuyen datos Bloomberg ni modelos aprendidos.
+El repositorio es público y puede clonarse sin autenticación. El Excel oficial con datos Bloomberg requiere acceso por canal autorizado. Referencia comprobada: Windows, Python 3.12.10. No se redistribuyen datos Bloomberg ni modelos aprendidos.
 
 ```powershell
 git clone https://github.com/renatoeortega-a11y/optimo-investment-usdclp.git
@@ -97,7 +97,7 @@ Copy-Item outputs/reproduccion/models/extra_2024.joblib artifacts/annual_2024_va
 .\.venv\Scripts\python.exe -B -m monitor_lab synthetic-demo
 ```
 
-`reproduce` reajusta únicamente los modelos históricos del protocolo 2019–2024; no cambia el artefacto de despliegue. Los 101 tests completos requieren el modelo definitivo y el fixture anual 2024 indicado. Notebook de agregados: funciona sin Excel ni modelos. La demo es exclusivamente sintética y requiere el artefacto preparado.
+`reproduce` reajusta únicamente los modelos históricos del protocolo 2019–2024; no cambia el artefacto de despliegue. Los 124 tests completos requieren el modelo definitivo y el fixture anual 2024 indicado. Notebook de agregados: funciona sin Excel ni modelos. La demo es exclusivamente sintética y requiere el artefacto preparado.
 
 ## Estructura y límites
 

@@ -1,6 +1,6 @@
 # Anexo metodológico y registro de descartes
 
-Esta entrega no oculta el ensayo y error ni convierte el mejor resultado observado en evidencia independiente. El código ejecutable no importa estas fases; los enlaces son antecedentes documentales. Los enlaces externos apuntan al repositorio privado de investigación y requieren acceso. No se incluyen PDF de terceros ni tablas individuales.
+Esta entrega no oculta el ensayo y error ni convierte el mejor resultado observado en evidencia independiente. El código ejecutable no importa las fases de investigación; sus identificadores se conservan como antecedentes de linaje. Las tablas agregadas incluidas permiten examinar la evidencia sin acceder al repositorio de investigación. No se incluyen PDF de terceros ni tablas individuales.
 
 | Línea | Qué se investigó | Conclusión para la entrega |
 |---|---|---|
@@ -17,14 +17,14 @@ Esta entrega no oculta el ensayo y error ni convierte el mejor resultado observa
 | Fase9 H9.1 | Etiqueta de movimiento relevante0,5sigma20 | No superó climatología; no comparar LL con objetivo original |
 | Pooling fijo |75%ET+25%Cat frente a75%ET+25%Laplace | Ligera mejora probabilística descriptiva, sin ventaja ajustada; economía peor; mantener ET |
 
-Fuentes publicadas privadas: [Fase5C](https://github.com/renatoeortega-a11y/itau-quant-lab/blob/main/docs/analisis_fase5c.md), [Fase5D-B](https://github.com/renatoeortega-a11y/itau-quant-lab/blob/main/docs/analisis_fase5d_b.md), [Fase6](https://github.com/renatoeortega-a11y/itau-quant-lab/blob/main/docs/analisis_fase6.md). Fases posteriores, pilotos, H9.1 y pooling no están publicados y no se promete que esos informes estén en GitHub. Los CSV agregados incluidos permiten examinar los resultados sin depender de esos informes.
+Linaje documental del proyecto de investigación: Fase5C (`docs/analisis_fase5c.md`), Fase5D-B (`docs/analisis_fase5d_b.md`) y Fase6 (`docs/analisis_fase6.md`). Estos nombres identifican los informes de origen, no archivos necesarios de esta entrega. La evidencia pública correspondiente está en [comparaciones de metodología](../reports/comparaciones_metodologia.csv), [ventanas](../reports/investigacion_ventanas.csv) y [Fase6](../reports/investigacion_fase6.csv). Los resultados disponibles de las fases posteriores, pilotos, H9.1 y pooling se conservan en las tablas de este repositorio, sin depender de informes externos.
 
 La corrección de multiplicidad y bootstrap por bloques reducen discrecionalidad estadística, pero no eliminan el sesgo acumulado de reutilizar2019–2024. No se construyó un test nuevo abriendo2025–2026 para confirmar al seleccionado.
 
 
 ## Evidencia cuantitativa y justificación de la selección
 
-Los enlaces privados anteriores pueden requerir autorización. Para revisión autónoma, reports/matriz_experimentos.csv contiene las métricas globales disponibles de Fase6, Fase8, H9.1 y pooling, sin matrices de confusión ni datos por jornada. reports/investigacion_fase6.csv conserva validación interna, contrastes ET/Laplace e intervalos; investigacion_ventanas.csv contiene contrastes expanding/rolling; investigacion_retorno.csv e investigacion_magnitud.csv conservan el objetivo separado de Fase5. Los nombres source son referencias de procedencia histórica, no dependencias necesarias del ejecutable. Los resultados históricos económicos son SPOT, sin atribuirles el nuevo carry de esta evaluación.
+Para revisión autónoma, [matriz_experimentos.csv](../reports/matriz_experimentos.csv) contiene las métricas globales disponibles de Fase6, Fase8, H9.1 y pooling, sin matrices de confusión ni datos por jornada. reports/investigacion_fase6.csv conserva validación interna, contrastes ET/Laplace e intervalos; investigacion_ventanas.csv contiene contrastes expanding/rolling; investigacion_retorno.csv e investigacion_magnitud.csv conservan el objetivo separado de Fase5. Los nombres source son referencias de procedencia histórica, no dependencias necesarias del ejecutable. Los resultados históricos económicos son SPOT, sin atribuirles el nuevo carry de esta evaluación.
 
 | Investigación | Propósito y evidencia | Motivo de no reemplazo |
 |---|---|---|
