@@ -49,7 +49,7 @@ def signal(excel,model_path,decision,session_confirmed=False):
  raw=load_excel(excel,cutoff=f.previous_weekday(d));X,lin=make_features(raw,d)
  if not lin['max_native_source'] or not f.histories(f.native(raw),'usdclp',f.previous_weekday(d))[0]:return dict(base,status='no_information')
  pp=score(bundle,X[None,:])[0];q=int(positions(pp[None,:])[0])
- if q not in (-1,1):return dict(base,status='policy_review_required',reason='Argmax neutral no observado en validación congelada; NO_ORDER, sin convertirlo en liquidación')
+ if q not in (-1,0,1):raise ValueError('Posición argmax inválida')
  return dict(base,status='historical_signal_only',position=q,p_down=float(pp[0]),p_flat=float(pp[1]),p_up=float(pp[2]),feature_cutoff=str(lin['cutoff']),availability_certified=False,execution='proposed close-to-next-observed-close; pending monitor confirmation')
 def transition(previous,result):
  """Propuesta de orden; sin sesión/señal válida NO liquida una exposición ya existente."""

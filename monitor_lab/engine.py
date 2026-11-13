@@ -31,7 +31,7 @@ def from_raw(raw,decision,bundle):
  # Orden fijo de suma al predecir: evita redondeos dependientes de hilos,
  # sin modificar árboles, parámetros ni codificador guardados.
  with joblib.parallel_backend('sequential'):P=score(bundle,X[None,:])[0]
- q=int(positions(P[None,:])[0]);result=dict(status='historical_signal_only' if q in (-1,1) else 'policy_review_required',position=q,p_down=float(P[0]),p_flat=float(P[1]),p_up=float(P[2]),decision=str(decision),feature_cutoff=str(line['cutoff']),max_source=str(line['max_native_source']),features=97,missing_features=int(np.isnan(X).sum()),availability_certified=False,executed=False)
+ q=int(positions(P[None,:])[0]);result=dict(status='historical_signal_only',position=q,p_down=float(P[0]),p_flat=float(P[1]),p_up=float(P[2]),decision=str(decision),feature_cutoff=str(line['cutoff']),max_source=str(line['max_native_source']),features=97,missing_features=int(np.isnan(X).sum()),availability_certified=False,executed=False)
  return result
 def live_signal(excel,manifest_path,model,decision,previous_position,session_confirmed=False):
  verify_registration();manifest=read(manifest_path);d=date.fromisoformat(decision);cut=f.previous_weekday(d)

@@ -6,7 +6,7 @@ Renato Ortega — rortegal@fen.uchile.cl · Benjamín Mundaca — bmundacam@fen.
 
 ## Estrategia
 
-Un clasificador **Extra Trees** estima probabilidades de baja, retorno exactamente cero y alza del USD/CLP. D2 contiene **97 características** de historia cambiaria, dólar global, commodities, monedas emergentes, tasas y riesgo/renta variable. La posición se obtiene mediante argmax; no se combinan modelos ni se aplican umbrales de confianza o apalancamiento. En el backtest hubo únicamente posiciones −1/+1.
+Un clasificador **Extra Trees** estima probabilidades de baja, retorno exactamente cero y alza del USD/CLP. D2 contiene **97 características** de historia cambiaria, dólar global, commodities, monedas emergentes, tasas y riesgo/renta variable. La posición se obtiene mediante argmax; no se combinan modelos ni se aplican umbrales de confianza o apalancamiento. En el backtest hubo únicamente posiciones −1/+1. Si el argmax es 0, la posición objetivo válida es caja CLP; esto es distinto de NO_ORDER, que conserva la posición anterior ante bloqueos.
 
 La elección responde a una implementación auditada y reproducible y a la ausencia de evidencia suficiente para reemplazarla con las alternativas investigadas. No implica superioridad estadística general. [Informe técnico](docs/informe_tecnico.md) · [Investigación y descartes](docs/investigacion.md).
 
